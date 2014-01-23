@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140121180258) do
+ActiveRecord::Schema.define(:version => 20140123045837) do
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -28,6 +28,8 @@ ActiveRecord::Schema.define(:version => 20140121180258) do
     t.datetime "updated_at",                             :null => false
     t.string   "user_name"
     t.text     "college"
+    t.string   "provider"
+    t.string   "uid"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
