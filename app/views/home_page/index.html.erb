@@ -1,0 +1,24 @@
+
+<h1> Main Page </h1>
+
+
+
+<% if current_user.try(:admin?) %>
+ <ul>
+	<li><%= link_to "Home", :controller => "home_page", :action => "index" %> </li>
+	<li><%= link_to "Sign In", :controller => "home_page", :action => "index" %> </li>
+	<li><%= link_to "Register", :controller => "home_page", :action => "index" %> </li>
+	<li><%= link_to "Rules", :controller => "home_page", :action => "index" %> </li>
+	<li><%= link_to "Admin", :controller => "home_page", :action => "index" %> </li>
+ </ul>
+
+<% else %>
+  <ul>
+<li><%= link_to "Home", :controller => "home_page", :action => "index" %> </li>
+<li><%= link_to "Sign In", :controller => "home_page", :action => "index" %> </li>
+<li><%= link_to "Register", :controller => "home_page", :action => "index" %> </li>
+<li><%= link_to "Rules", :controller => "home_page", :action => "index" %> </li>
+
+</ul>
+<% end %>
+
