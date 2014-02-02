@@ -1,0 +1,23 @@
+
+<h1><%= "LEVEL #{@level.id}" %></h1>
+<h2><%= @level.question %> </h2>
+
+	<% unless current_user.admin? %>
+		<%= form_for @attempt do |f| %>
+
+		   <%= f.text_field :attempt, :placeholder => "Your answer goes here"%>
+
+  			<%=f.submit "Answer" %>
+
+
+		<% end %><br/>
+ <% end %>
+		<% if @attempt and @attempts.any? %>
+		 <%= "#{pluralize(@attempts.count, "attempt")} so far:" %><br/>
+		 <% end %>
+
+		 <ul>
+		 		<% @attempts.count.times do |n|%>
+		 		 <li><%= @attempts[n].attempt %> </li>
+		 		 <% end %>
+		 	</ul

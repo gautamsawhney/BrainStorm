@@ -1,6 +1,9 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
+
+  before_create :allot_score
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, :omniauth_providers => [:facebook]
@@ -8,6 +11,8 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :user_name, :college, :provider, :uid
   # attr_accessible :title, :body
+
+  has_many :attempts, :dependent => :destroy
 
   def self.find_for_facebook_oauth(auth)
   where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|
@@ -20,6 +25,7 @@ class User < ActiveRecord::Base
   end
 end
 
+
   def self.new_with_session(params, session)
     super.tap do |user|
       if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
@@ -27,5 +33,11 @@ end
       end
     end
   end
+
+  private
+    
+    def allot_score
+      self.score = 1
+    end
 
 end
