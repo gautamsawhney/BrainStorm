@@ -9,6 +9,7 @@ def create
 		if (@attempt.attempt).eql? (@level.answer)
 			unless current_user.admin?
 				current_user.score = @level.next_id
+				current_user.last_correct_answer_at = Time.now
 				current_user.save
 			end
 
