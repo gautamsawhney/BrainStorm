@@ -10,6 +10,7 @@ BrainStorm::Application.routes.draw do
    match '/home',  :to => 'home_page#index',   :as => 'home' 
    match '/admin', :to => 'extra_pages#admin', :as => 'admin' 
    match '/play',  :to => 'levels#play',       :as => 'play'
+   match '/leaderboard', :to => 'extra_pages#leaderboard', :as => 'leaderboard'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
