@@ -3,20 +3,24 @@
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
-  <div><%= f.label :user_name %> <br/>
-  	<%= f.text_field :user_name %></div>
+  <div><%= f.label :name %><br />
+    <%= f.text_field :name, :autofocus => true, :placeholder => "Enter your full name" %>
+  </div>
 
-  <div><%= f.label :college %> <br/>
-  	<%= f.text_field :college %></div>
+  <div><%= f.label :user_name %> <br />
+  	<%= f.text_field :user_name, :placeholder => "Name to displayed on the leaderboard"%></div>
+
+  <div><%= f.label :college %> <br />
+  	<%= f.text_field :college, :placeholder => "Enter the name of your college" %></div>
 
   <div><%= f.label :email %><br />
-  <%= f.email_field :email, :autofocus => true %></div>
+  <%= f.email_field :email, :placeholder => "Enter your email" %></div>
 
   <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
+  <%= f.password_field :password, :placeholder => "Enter your password"%></div>
 
   <div><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></div>
+  <%= f.password_field :password_confirmation, :placeholder => "Confirm your password" %></div>
 
   <div><%= f.submit "Sign up" %></div>
 <% end %>

@@ -3,6 +3,9 @@ class Level < ActiveRecord::Base
 
   has_many :attempts
 
+  validates :answer , :presence => true, :length => {:maximum => 50}
+
+
   def self.set(params)
   	next_id = nil
   	prev_id = (Level.last and Level.last.id) ? Level.last.id : nil

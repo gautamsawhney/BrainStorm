@@ -9,8 +9,14 @@ class User < ActiveRecord::Base
          :omniauthable, :omniauth_providers => [:facebook]
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :user_name, :college, :provider, :uid
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :user_name, :college, :provider, :uid, :name
   # attr_accessible :title, :body
+
+  validates :name, :presence => true, :length => {:maximum => 35},
+  :format => {:with => /^[A-Za-z ]+$/, :message => " should only have alphabets"}
+
+  validates :user_name, :presence => true, :length => {:maximum => 50}
+  validates :college, :presence => true
 
   has_many :attempts, :dependent => :destroy
 
