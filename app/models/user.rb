@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
   validates :name, :presence => true, :length => {:maximum => 35},
   :format => {:with => /^[A-Za-z ]+$/, :message => " should only have alphabets"}
 
-  validates :user_name, :presence => true, :length => {:maximum => 50}
+  validates :user_name, :uniqueness => true, :presence => true, :length => {:maximum => 50}
   validates :college, :presence => true
 
   has_many :attempts, :dependent => :destroy
