@@ -1,6 +1,6 @@
 <h2> ADD LEVEL </h2>
 
-	<% #(@level.new_record?) ? "Add Level #{current_level + 1}" : "Editing Level #{@level.id}" %>
+	<% #(@level.new_record?) ? "Add Level #{@current_level + 1}" : "Editing Level #{@level.id}" %>
 
 <%= form_for @level do |f| %>
 
@@ -10,6 +10,10 @@
   <%= f.label :answer %>
   <%= f.text_field :answer%>
 
-  <%=f.submit "Create" %>
+<% if @level.new_record? %>
+  <%= f.submit "Create" %>
+<% else %>
+  <%= f.submit "Edit" %>
+<% end %>
 
 <% end %>

@@ -27,6 +27,16 @@ class LevelsController < ApplicationController
 	  end
     end
 
+    def update 
+      @level = Level.find(params[:id])
+      if @level.update_attributes(params[:level])
+      	flash[:success] = "Level successfully Updated"
+      	redirect_to @level
+      else
+      	render 'extra_pages/edit_level'
+      end
+    end
+
 
 
   private
