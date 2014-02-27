@@ -5,6 +5,8 @@ class Level < ActiveRecord::Base
 
   validates :answer , :presence => true, :length => {:maximum => 50}
 
+ 
+
 
   def self.set(params)
   	next_id = nil
