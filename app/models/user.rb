@@ -12,11 +12,10 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me, :user_name, :college, :provider, :uid, :name
   # attr_accessible :title, :body
 
-  validates :name, :presence => true, :length => {:maximum => 35},
-  :format => {:with => /^[A-Za-z ]+$/, :message => " should only have alphabets"}
+  validates :name,  :length => {:maximum => 35},
 
-  validates :user_name, :uniqueness => true, :presence => true, :length => {:maximum => 50}
-  validates :college, :presence => true
+  validates :user_name, :uniqueness => true,  :length => {:maximum => 50}
+  validates :college
 
   has_many :attempts, :dependent => :destroy
 
