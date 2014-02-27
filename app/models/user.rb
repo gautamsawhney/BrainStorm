@@ -12,10 +12,11 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me, :user_name, :college, :provider, :uid, :name
   # attr_accessible :title, :body
 
-  validates :name,  :length => {:maximum => 35},
+  validates :name, :presence => true, :length => {:maximum => 35},
+  :format => {:with => /^[A-Za-z ]+$/, :message => " should only have alphabets"}
 
-  validates :user_name, :uniqueness => true,  :length => {:maximum => 50}
-  validates :college
+  validates :user_name, :uniqueness => true, :presence => true, :length => {:maximum => 50}
+  validates :college, :presence => true
 
   has_many :attempts, :dependent => :destroy
 
@@ -25,9 +26,6 @@ class User < ActiveRecord::Base
     user.uid = auth.uid
     user.email = auth.info.email
     user.password = Devise.friendly_token[0,20]
-    user.name = auth.info.name   # assuming the user model has a name
-        user.user_name = auth.info.user_name   # assuming the user model has a name
-        user.college = auth.info.college   # assuming the user model has a name
    
     user.save!
   end
@@ -38,7 +36,6 @@ end
     super.tap do |user|
       if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
         user.email = data["email"] if user.email.blank?
-    
       end
     end
   end
