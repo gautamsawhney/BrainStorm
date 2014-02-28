@@ -23,11 +23,8 @@ Devise.setup do |config|
   # available as additional gems.
   require 'devise/orm/active_record'
 
-  require "omniauth-facebook"
+  config.omniauth :facebook, "250841391758749", "978551b266ee184ef044eebcbc476ec8", :strategy_class => OmniAuth::Strategies::Facebook
 
-
-config.omniauth :facebook, "250841391758749", "978551b266ee184ef044eebcbc476ec8",
-      {:scope => 'email, offline_access', :client_options => {:ssl => {:ca_file => '/usr/lib/ssl/certs/ca-certificates.crt'}}} 
 
 
   # ==> Configuration for any authentication mechanism

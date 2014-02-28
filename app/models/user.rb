@@ -20,17 +20,20 @@ class User < ActiveRecord::Base
 
   has_many :attempts, :dependent => :destroy
 
-  def self.find_for_facebook_oauth(auth)
-  where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|
-    user.provider = auth.provider
-    user.uid = auth.uid
-    user.email = auth.info.email
-    user.password = Devise.friendly_token[0,20]
-   
-    user.save!
-  end
-end
+def self.find_or_create(auth, signed_in_resource=nil)
+   new_record = false
+    user = where(:provider => auth.provider, :uid => auth.uid)
+    new_record = true if user.empty?
+    new_user = where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|
+      user.provider = auth.provider
+      user.uid = auth.uid
+      user.email = auth.info.email
+      user.password = Devise.friendly_token[0,20]
+      user.name = auth.info.name   # assuming the user model has a name
+    end
+      [new_user, new_record]
 
+ end
 
   def self.new_with_session(params, session)
     super.tap do |user|
