@@ -16,8 +16,12 @@ class ApplicationController < ActionController::Base
   def game_playable?
     if (Game.first and Game.first.is_playable) or current_user.admin?
     else
-      redirect_to home_path, :notice => "Brainstorm is not yet playable"
+      redirect_to home_path, :notice => "We know YOU Love Brainstorm but it isn't playable yet."
     end
+  end
+
+  def sterlize(value)
+  	value.chomp.downcase.gsub(/[\W\n\s]/,'')
   end
 
 

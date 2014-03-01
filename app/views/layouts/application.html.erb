@@ -30,7 +30,11 @@
           <li><%= link_to "LeaderBoard", leaderboard_path %></li>
 
       <% if user_signed_in? %>
+           <% if current_user.score == 6 %>
+             <h1> Game Completed </h1>
+           <% else %>
           <li><%= link_to "Play Game", play_path%></li>
+           <% end %>
           <li><%= link_to "Logout", destroy_user_session_path, :method => :delete  %></li>
       <% else %> 
           <li><%= link_to "Sign In", user_session_path %></li>

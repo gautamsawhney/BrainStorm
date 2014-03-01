@@ -1,5 +1,6 @@
 class Level < ActiveRecord::Base
   attr_accessible :answer, :next_id, :prev_id, :question
+  before_save :sterlize_answer
 
   has_many :attempts
 
@@ -14,5 +15,9 @@ class Level < ActiveRecord::Base
   	params[:prev_id] = prev_id
   	level = Level.new(params)
   	level
+  end
+
+  def sterlize_answer
+    self.answer = self.answer.chomp.downcase.gsub(/[\W\n\s]/,'')
   end
 end
