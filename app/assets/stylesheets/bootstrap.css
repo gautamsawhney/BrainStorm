@@ -44,7 +44,7 @@ template {
 }
 
 html {
-  font-family: sans-serif;
+  font-family: 'Abril Fatface', cursive;
   -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
 }
@@ -309,7 +309,7 @@ html {
 }
 
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Abril Fatface', cursive;
   font-size: 14px;
   line-height: 1.428571429;
   color: #fff;
@@ -403,7 +403,7 @@ h6,
 .h4,
 .h5,
 .h6 {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  ffont-family: 'Abril Fatface', cursive;
   font-weight: 500;
   line-height: 1.1;
   color: inherit;
@@ -4456,6 +4456,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 
 .navbar-static-top {
   z-index: 1000;
+  border-width: 0 0 1px;
 }
 
 @media (min-width: 768px) {
@@ -4481,11 +4482,13 @@ textarea.input-group-sm > .input-group-btn > .btn {
 
 .navbar-fixed-top {
   top: 0;
+  border-width: 0 0 1px;
 }
 
 .navbar-fixed-bottom {
   bottom: 0;
   margin-bottom: 0;
+  border-width: 1px 0 0;
 }
 
 .navbar-brand {
@@ -4708,6 +4711,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 
 .navbar-default .navbar-brand {
+  margin-top: 1em;
   color: #777777;
 }
 
@@ -4722,6 +4726,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 
 .navbar-default .navbar-nav > li > a {
+  margin-top: 1em;
   color: #777777;
 }
 
@@ -4746,6 +4751,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 
 .navbar-default .navbar-toggle {
+  border-color: #dddddd;
 }
 
 .navbar-default .navbar-toggle:hover,
