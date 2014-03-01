@@ -6,6 +6,13 @@
 
 /*! normalize.css v2.1.3 | MIT License | git.io/normalize */
 
+/*
+Own code
+*/
+
+/*
+own code complete
+*/
 article,
 aside,
 details,
@@ -306,8 +313,8 @@ body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.428571429;
-  color: #333333;
-  background-color: #eee;
+  color: #fff;
+  background-color: #27272A;
 }
 
 input,

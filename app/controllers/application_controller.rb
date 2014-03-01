@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
 
  	def user_admin
  	  unless current_user and current_user.admin?
-		redirect_to home_path, :alert => "shaadi pe aya hai?" 
+		redirect_to home_path, :alert => "Restricted area" 
 	  end
 	end
 
