@@ -1,0 +1,31 @@
+<html>
+
+<head>
+	<title>BrainStorm-2014</title>
+	<%= stylesheet_link_tag "home_page" %>
+	<%= stylesheet_link_tag "bootstrap" %>
+    <%= stylesheet_link_tag "bootstrap-theme" %>
+</head>
+<body class="container-fluid main-back">
+	<img class="bslogo col-md-10 col-lg-10 col-xs-12 col-md-offset-1 img-responsive" src="bslogo.png">
+
+	<div class="col-md-offset-5 col-xs-10 col-lg-5 fb-like" data-href="https://www.facebook.com/bstorm2014" data-width="20" data-layout="standard" data-action="like" data-show-faces="true" data-share="true" data-colorscheme="dark"></div>
+
+	<div class="btn btn-primary col-md-offset-5 col-md-2 col-xs-offset-3"><%= link_to "Register Now", new_user_registration_path,:class=> "link" %></div>
+
+	<div id="fb-root"></div>
+
+		<script>
+
+			  (function(d, s, id) {
+			  var js, fjs = d.getElementsByTagName(s)[0];
+			  if (d.getElementById(id)) return;
+			  js = d.createElement(s); js.id = id;
+			  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=1460982320795970";
+			  fjs.parentNode.insertBefore(js, fjs);
+			}(document, 'script', 'facebook-jssdk'));
+		
+		</script>
+
+</body>
+</html>
