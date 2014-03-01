@@ -9,7 +9,6 @@
 /*
 Own code
 */
-
 /*
 own code complete
 */
@@ -4328,9 +4327,8 @@ textarea.input-group-sm > .input-group-btn > .btn {
 
 .navbar {
   position: relative;
-  min-height: 50px;
+  min-height: 70px;
   margin-bottom: 20px;
-  border: 1px solid transparent;
 }
 
 .navbar:before,
@@ -4458,7 +4456,6 @@ textarea.input-group-sm > .input-group-btn > .btn {
 
 .navbar-static-top {
   z-index: 1000;
-  border-width: 0 0 1px;
 }
 
 @media (min-width: 768px) {
@@ -4484,13 +4481,11 @@ textarea.input-group-sm > .input-group-btn > .btn {
 
 .navbar-fixed-top {
   top: 0;
-  border-width: 0 0 1px;
 }
 
 .navbar-fixed-bottom {
   bottom: 0;
   margin-bottom: 0;
-  border-width: 1px 0 0;
 }
 
 .navbar-brand {
@@ -4710,7 +4705,6 @@ textarea.input-group-sm > .input-group-btn > .btn {
 
 .navbar-default {
   background-color: #f8f8f8;
-  border-color: #e7e7e7;
 }
 
 .navbar-default .navbar-brand {
@@ -4724,7 +4718,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 
 .navbar-default .navbar-text {
-  color: #777777;
+  color: #fff;
 }
 
 .navbar-default .navbar-nav > li > a {
@@ -4733,7 +4727,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
-  color: #333333;
+  color: #fff;
   background-color: transparent;
 }
 
@@ -4752,7 +4746,6 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 
 .navbar-default .navbar-toggle {
-  border-color: #dddddd;
 }
 
 .navbar-default .navbar-toggle:hover,
