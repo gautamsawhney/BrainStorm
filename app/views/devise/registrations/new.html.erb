@@ -1,32 +1,38 @@
-<h2>Sign up</h2>
+<h2 class="text-center">Sign up</h2>
 
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
-  <div><%= f.label :name %><br />
-    <%= f.text_field :name, :autofocus => true, :placeholder => "Enter your full name" %>
-  </div>
+<div class="col-lg-4 col-md-4 col-xs-12 col-md-offset-4 col-lg-offset-4">
+    <form class="form-horizontal" role="form">
 
-  <div><%= f.label :user_name %> <br />
-  	<%= f.text_field :user_name, :placeholder => "Name to be displayed on the leaderboard"%></div>
+          <div class="form-group"><%= f.label :name %><br />
+            <%= f.text_field :name, :autofocus => true, :placeholder => "Full Name", :class=> "form-control" %>
+          </div>
 
-  <div><%= f.label :college %> <br />
-  	<%= f.text_field :college, :placeholder => "Enter the name of your college" %></div>
+          <div class="form-group"><%= f.label :user_name %> <br />
+          	<%= f.text_field :user_name, :placeholder => "Username", :class=> "form-control"%></div>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, :placeholder => "Enter your email" %></div>
+          <div class="form-group"><%= f.label :college %> <br />
+          	<%= f.text_field :college, :placeholder => "College name",:class=> "form-control"  %></div>
 
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password, :placeholder => "Enter your password"%></div>
+          <div class="form-group"><%= f.label :email %><br />
+          <%= f.email_field :email, :placeholder => "Enter your email",:class=> "form-control"  %></div>
 
-  <div><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation, :placeholder => "Confirm your password" %></div>
+          <div class="form-group"><%= f.label :password %><br />
+          <%= f.password_field :password, :placeholder => "Enter your password", :class=> "form-control" %></div>
 
-  <div><%= f.submit "Sign up" %></div>
-<% end %>
+          <div class="form-group"><%= f.label :password_confirmation %><br />
+          <%= f.password_field :password_confirmation, :placeholder => "Confirm your password", :class=> "form-control"%></div>
 
-<%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
+          <div><%= f.submit "Sign up", :class => "btn btn-primary" %></div>
+        <% end %>
+
+    </form>
+  <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %><br>
 
 
 
-<%= render "devise/shared/links" %>
+  <%= render "devise/shared/links" %>
+</div>
+
