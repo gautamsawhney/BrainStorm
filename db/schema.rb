@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140227194203) do
+ActiveRecord::Schema.define(:version => 20140228145914) do
 
   create_table "attempts", :force => true do |t|
     t.text     "attempt"
@@ -25,6 +25,11 @@ ActiveRecord::Schema.define(:version => 20140227194203) do
     t.boolean  "is_playable", :default => false
     t.datetime "created_at",                     :null => false
     t.datetime "updated_at",                     :null => false
+  end
+
+  create_table "images", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "levels", :force => true do |t|

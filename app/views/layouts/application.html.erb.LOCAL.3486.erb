@@ -26,13 +26,8 @@
      </div>
      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
        <ul class="nav navbar-nav navbar-right">
-<<<<<<< HEAD
            <li><%= link_to "Rules", rules_path %></li>
            <li><%= link_to "Forum", root_path %></li>
-=======
-           <li><%= link_to "Rules", root_path %></li>
-           <li><%= link_to "Forum", "https://apps.facebook.com/forumforpages/page/769175719761186", :target => :blank %></li>
->>>>>>> upstream/master
           
       <% if current_user.try(:admin?) %>
          <li><%= link_to "Make Game", admin_path %></li>
@@ -40,11 +35,7 @@
           <li><%= link_to "LeaderBoard", leaderboard_path %></li>
 
       <% if user_signed_in? %>
-           <% if current_user.score == 6 %>
-             <h1> Game Completed </h1>
-           <% else %>
           <li><%= link_to "Play Game", play_path%></li>
-           <% end %>
           <li><%= link_to "Logout", destroy_user_session_path, :method => :delete  %></li>
       <% else %> 
           <li><%= link_to "Sign In", user_session_path %></li>
