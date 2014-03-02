@@ -1,6 +1,6 @@
 class ExtraPagesController < ApplicationController
 
-   before_filter :user_admin, :only => [:admin, :edit_level]
+   before_filter :user_admin, :only => [:admin, :edit_level, :leaderboard]
 
    	def admin
    		@level = Level.new
@@ -15,5 +15,8 @@ class ExtraPagesController < ApplicationController
    	def edit_level
    	  @level = Level.find(params[:id])
    	end
+
+      def rules
+      end
 
 end
