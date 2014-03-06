@@ -2,7 +2,7 @@
 
 	<% #(@level.new_record?) ? "Add Level #{@current_level + 1}" : "Editing Level #{@level.id}" %>
 
-<%= form_for @level do |f| %>
+<%= form_for @level, :html => { :multipart => true } do |f| %>
 
   <%= f.label :question %>
   <%= f.text_field :question %>

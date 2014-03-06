@@ -1,3 +1,4 @@
+
 class Level < ActiveRecord::Base
   attr_accessible :answer, :next_id, :prev_id, :question, :image
   before_save :sterlize_answer
