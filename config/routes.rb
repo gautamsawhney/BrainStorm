@@ -13,6 +13,7 @@ BrainStorm::Application.routes.draw do
    match '/leaderboard',    :to => 'extra_pages#leaderboard', :as => 'leaderboard'
    match 'levels/:id/edit', :to => 'extra_pages#edit_level',  :as => 'edit_level'
    match '/rules',          :to => 'extra_pages#rules',       :as => 'rules'
+   match 'team',            :to => 'extra_pages#team',       :as => 'team'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

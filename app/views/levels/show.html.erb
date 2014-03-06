@@ -1,6 +1,13 @@
 
+
+<div align = "center">
 <h1><%= "LEVEL #{@level.id}" %></h1>
-<h2><%= @level.question %> </h2>
+
+ <div class ="image-responsive"> <%= image_tag @level.image_url.to_s %><br/></div>
+
+<h2><%= @level.question %> </h2> </br>
+
+
 
 	<% unless current_user.admin? %>
 		<%= form_for @attempt do |f| %>
@@ -20,4 +27,5 @@
 		 		<% @attempts.count.times do |n|%>
 		 		 <li><%= @attempts[n].attempt %> </li>
 		 		 <% end %>
-		 	</ul
+		 	</ul>
+</div>		 	

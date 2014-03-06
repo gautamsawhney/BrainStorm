@@ -9,6 +9,28 @@
 /*
 Own code
 */
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: #999;
+}
+ footer > a {
+    color: #fff;
+  }
+  footer > a:hover{
+      color: #555;
+      text-decoration: none;
+    }
+ footer > ul {
+    list-style: none; float: right;
+  }
+  footer > li {
+      float: left;
+      margin-left: 15px;
+    }
+  
+
 /*
 own code complete
 */
@@ -257,7 +279,7 @@ table {
     max-width: 100% !important;
   }
   @page  {
-    margin: 2cm .5cm;
+    margin: 2cm ,5cm;
   }
   p,
   h2,
@@ -309,7 +331,7 @@ html {
 }
 
 body {
-  font-family: 'Abril Fatface', cursive;
+  font-family: 'Abril Fatface', 'cursive';
   font-size: 14px;
   line-height: 1.428571429;
   color: #fff;
@@ -403,7 +425,7 @@ h6,
 .h4,
 .h5,
 .h6 {
-  ffont-family: 'Abril Fatface', cursive;
+  font-family: 'Abril Fatface', 'cursive';
   font-weight: 500;
   line-height: 1.1;
   color: inherit;
@@ -1722,7 +1744,7 @@ th {
 
 .table-hover > tbody > tr:hover > td,
 .table-hover > tbody > tr:hover > th {
-  background-color: #f5f5f5;
+  background-color: #47474F;
 }
 
 table col[class*="col-"] {
@@ -1806,7 +1828,7 @@ table th[class*="col-"] {
 .table-hover > tbody > tr > .warning:hover,
 .table-hover > tbody > .warning:hover > td,
 .table-hover > tbody > .warning:hover > th {
-  background-color: #faf2cc;
+  background-color: #27272A;
 }
 
 @media (max-width: 767px) {
