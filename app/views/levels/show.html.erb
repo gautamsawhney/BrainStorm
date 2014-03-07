@@ -3,7 +3,7 @@
 <div align = "center">
 <h1><%= "LEVEL #{@level.id}" %></h1>
 
- <div class ="image-responsive"> <%= image_tag @level.image_url.to_s %><br/></div>
+ <div class ="img-responsive"> <%= image_tag @level.image_url.to_s, :class => "img-responsive" %><br/></div>
 
 <h2><%= @level.question %> </h2> </br>
 
@@ -22,10 +22,12 @@
 		<% if @attempt and @attempts.any? %>
 		 <%= "#{pluralize(@attempts.count, "attempt")} so far:" %><br/>
 		 <% end %>
-
+ </div>
+        <div class = "attempts col-xs-12 col-lg-4 col-md-4 col-md-offset-4 col-lg-offset-4"
 		 <ul>
 		 		<% @attempts.count.times do |n|%>
-		 		 <li><%= @attempts[n].attempt %> </li>
+		 		<li> <%= @attempts[n].attempt %> </li> 
 		 		 <% end %>
 		 	</ul>
-</div>		 	
+		 </div>
+	 	
