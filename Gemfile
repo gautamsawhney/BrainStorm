@@ -12,6 +12,7 @@ gem "google-analytics-rails", "~> 0.0.4"
 
 group :development, :test do 
   gem "sqlite3"
+  gem 'rspec-rails', '~> 3.0.0'
 end
 
 # Gems used only for assets and not required
