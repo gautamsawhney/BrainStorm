@@ -1,5 +1,5 @@
 == README     
 
-BrainStorm is an Online Treasure Hunt Evnet . It's hosted at www.bstrom2014.com.
+BrainStorm is an Online Treasure Hunt Evnet . It's hosted at www.bstorm2014.com.
 The website got more than 70,000 page views and over 100,000 attempts from over 50
 countries in just 5 days.
